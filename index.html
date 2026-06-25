@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活动投票工具</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 活动投票</h1>
+        <p class="subtitle">匿名投票，选择你想参加的活动和有空的时间</p>
+        
+        <form id="voteForm">
+            <div class="section">
+                <h2>选择活动 (可多选)</h2>
+                <div class="options">
+                    <label class="option">
+                        <input type="checkbox" name="activity" value="密室逃脱">
+                        <span>🔐 密室逃脱</span>
+                    </label>
+                    <label class="option">
+                        <input type="checkbox" name="activity" value="剧本杀">
+                        <span>🎭 剧本杀</span>
+                    </label>
+                    <label class="option">
+                        <input type="checkbox" name="activity" value="真人CS">
+                        <span>🔫 真人CS</span>
+                    </label>
+                    <label class="option">
+                        <input type="checkbox" name="activity" value="KTV">
+                        <span>🎤 KTV</span>
+                    </label>
+                    <label class="option">
+                        <input type="checkbox" name="activity" value="卡丁车">
+                        <span>🏎️ 卡丁车</span>
+                    </label>
+                    <label class="option">
+                        <input type="checkbox" name="activity" value="环球影城">
+                        <span>🎢 环球影城</span>
+                    </label>
+                    <label class="option">
+                        <input type="checkbox" name="activity" value="Party Room">
+                        <span>🎊 Party Room</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>有空的周六 (可多选)</h2>
+                <div class="options" id="saturdayOptions">
+                    <!-- 动态生成接下来4个周六 -->
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>有空的周日 (可多选)</h2>
+                <div class="options" id="sundayOptions">
+                    <!-- 动态生成接下来4个周日 -->
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>推荐新活动 (可选)</h2>
+                <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                    <input type="text" id="customActivity" placeholder="输入你想推荐的活动..." 
+                           style="flex: 1; padding: 12px 20px; border: 2px solid #e9ecef; border-radius: 8px; font-size: 1em;">
+                    <button type="button" id="addActivityBtn" class="view-results-btn" 
+                            style="margin: 0; white-space: nowrap;">+ 添加</button>
+                </div>
+                <div class="options" id="customActivitiesOptions">
+                    <!-- 用户添加的自定义活动 -->
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">提交投票</button>
+        </form>
+
+        <div class="results-section">
+            <h2>📊 投票结果</h2>
+            <button id="showResults" class="view-results-btn">查看结果</button>
+            <div id="resultsContainer" class="results hidden"></div>
+        </div>
+    </div>
+
+    <div id="successMessage" class="success-message hidden">
+        ✅ 投票成功！感谢参与
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
